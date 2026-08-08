@@ -1,0 +1,94 @@
+name: Hermes install or usage report
+description: Report a reproducible GoodMemory install success or failure in Hermes Agent.
+title: "[Hermes report]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing the GoodMemory MemoryProvider. A report counts as adoption evidence only when it describes a real Hermes run.
+
+        Do not include bridge tokens, credentials, private paths, or real memory content. Use synthetic examples when sharing commands or output.
+
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: Outcome
+      description: What happened in the real Hermes run?
+      options:
+        - Successful cross-session write and recall
+        - Installation or setup failed
+        - Installed, but a memory operation failed
+        - Reproducible feedback or limitation
+    validations:
+      required: true
+
+  - type: input
+    id: hermes-version
+    attributes:
+      label: Hermes Agent version
+      description: Paste the output of `hermes --version`.
+      placeholder: "0.20.0"
+    validations:
+      required: true
+
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      description: Paste the version shown by `hermes plugins info goodmemory`.
+      placeholder: "0.1.0"
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Platform and Python version
+      description: Include OS, architecture, and `python --version`.
+      placeholder: "macOS 15.6 arm64; Python 3.12.11"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: bridge
+    attributes:
+      label: GoodMemory bridge
+      options:
+        - Local HTTP bridge
+        - VibeNest hosted bridge
+        - Other self-hosted bridge
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: verified-flow
+    attributes:
+      label: Operations actually verified
+      description: Check only operations you ran successfully. It is valid to leave boxes unchecked for a failure report.
+      options:
+        - label: "Provider appeared after `hermes memory setup`"
+        - label: "`goodmemory_remember` accepted a synthetic project decision"
+        - label: "A new Hermes session recalled that decision in the same project"
+        - label: "A different project did not recall that decision"
+        - label: "`goodmemory_revise` corrected the synthetic decision"
+        - label: "`goodmemory_forget` removed the synthetic decision"
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps and sanitized output
+      description: List the exact commands and relevant output. Remove tokens, private paths, and real memory content.
+      placeholder: |
+        1. hermes plugins install hjqcan/hermes-goodmemory --no-enable
+        2. hermes memory setup
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+      description: For a success report, briefly state what worked. For a failure, contrast expected and actual behavior.
+    validations:
+      required: true

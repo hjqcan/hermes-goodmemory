@@ -122,3 +122,11 @@ Hermes 0.20 currently has upstream reports affecting some provider surfaces:
 
 These are upstream limitations, not claims that every Hermes surface has been
 verified.
+
+## Report a real install
+
+Use the structured
+[Hermes install or usage report](https://github.com/hjqcan/hermes-goodmemory/issues/new?template=install-report.yml)
+after a real run. Successful and failed reports are both useful when they include
+the Hermes and plugin versions, platform, bridge mode, exact commands, and
+sanitized output. Never include tokens or real memory content.
