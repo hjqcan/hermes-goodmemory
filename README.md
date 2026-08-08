@@ -32,7 +32,7 @@ and activates `memory.provider: goodmemory`.
 For a local bridge:
 
 ```bash
-npm install -g goodmemory@0.7.3
+npm install -g goodmemory@0.7.2
 GOODMEMORY_HTTP_BRIDGE_ALLOW_INSECURE=1 \
   goodmemory-http-bridge --host 127.0.0.1 --port 8739 --recommended
 ```

@@ -144,7 +144,7 @@ def test_manifest_is_installable_and_pins_the_bridge_client():
     manifest = yaml.safe_load((PLUGIN_ROOT / "plugin.yaml").read_text(encoding="utf-8"))
 
     assert manifest["name"] == "goodmemory"
-    assert manifest["version"] == "0.1.0"
+    assert manifest["version"] == "0.1.1"
     assert manifest["pip_dependencies"] == ["goodmemory-client>=0.1.0,<0.3"]
     assert manifest["requires_env"][0]["name"] == "GOODMEMORY_BRIDGE_TOKEN"
     assert manifest["requires_env"][0]["secret"] is True

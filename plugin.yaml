@@ -1,5 +1,5 @@
 name: goodmemory
-version: 0.1.0
+version: 0.1.1
 description: "GoodMemory — scoped, auditable cross-session memory for Hermes Agent."
 pip_dependencies:
   - goodmemory-client>=0.1.0,<0.3
