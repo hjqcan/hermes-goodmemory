@@ -113,9 +113,6 @@ Hermes 0.20 currently has upstream reports affecting some provider surfaces:
 - [#76231](https://github.com/NousResearch/hermes-agent/issues/76231): provider
   initialization omits `cwd`. This plugin resolves Hermes' canonical runtime
   cwd directly, so its workspace scope does not use the process fallback.
-- [#79339](https://github.com/NousResearch/hermes-agent/issues/79339):
-  `sync_turn()` can be skipped. This plugin does not depend on automatic turn
-  syncing; writes are explicit tools.
 - [#81427](https://github.com/NousResearch/hermes-agent/issues/81427): provider
   tools may be absent in Desktop sessions. CLI is the supported verification
   surface until that upstream issue is fixed; automatic recall may still work.
