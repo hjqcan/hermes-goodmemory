@@ -21,7 +21,7 @@ Install the plugin, configure its provider, and start a new session:
 
 ```bash
 hermes plugins install hjqcan/hermes-goodmemory --no-enable
-hermes memory setup goodmemory
+hermes memory setup   # select goodmemory
 hermes memory status
 ```
 
@@ -37,7 +37,7 @@ GOODMEMORY_HTTP_BRIDGE_ALLOW_INSECURE=1 \
   goodmemory-http-bridge --host 127.0.0.1 --port 8739 --recommended
 ```
 
-Use `http://127.0.0.1:8739` during `hermes memory setup goodmemory` and leave
+Use `http://127.0.0.1:8739` during `hermes memory setup` and leave
 the token blank only for this explicitly insecure loopback setup.
 
 GoodMemory is also deployed at `https://goodmemory.vibenest.net`; that hosted

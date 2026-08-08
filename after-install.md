@@ -3,7 +3,7 @@
 Configure and activate it:
 
 ```bash
-hermes memory setup goodmemory
+hermes memory setup   # select goodmemory
 hermes memory status
 ```
 
