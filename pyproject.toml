@@ -1,0 +1,17 @@
+[project]
+name = "hermes-goodmemory"
+version = "0.1.0"
+description = "GoodMemory provider plugin for Hermes Agent"
+requires-python = ">=3.11"
+dependencies = [
+  "goodmemory-client>=0.1.0,<0.3",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=8,<9",
+  "pyyaml>=6,<7",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

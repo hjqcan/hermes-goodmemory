@@ -1,0 +1,30 @@
+name: test
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  current-hermes-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: astral-sh/setup-uv@d0d8abe699bfb85fec6de9f7adb5ae17292296ff # v6
+      - name: Check out current Hermes Agent contract
+        run: git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/hermes-agent
+      - name: Test provider behavior and discovery
+        env:
+          HERMES_AGENT_REPO: /tmp/hermes-agent
+          PYTHONPATH: /tmp/hermes-agent
+        run: >-
+          uv run --python 3.11
+          --with 'pytest>=8,<9'
+          --with 'pyyaml>=6,<7'
+          pytest tests -q
+      - name: Check formatting and lint
+        run: |
+          uvx --from 'ruff==0.14.10' ruff format --check .
+          uvx --from 'ruff==0.14.10' ruff check .

@@ -1,0 +1,10 @@
+name: goodmemory
+version: 0.1.0
+description: "GoodMemory — scoped, auditable cross-session memory for Hermes Agent."
+pip_dependencies:
+  - goodmemory-client>=0.1.0,<0.3
+requires_env:
+  - name: GOODMEMORY_BRIDGE_TOKEN
+    description: "Bearer token for your GoodMemory HTTP bridge; leave blank only for an explicitly insecure local bridge."
+    url: "https://github.com/hjqcan/GoodMemory#pythonfastapi-http-bridge"
+    secret: true
